@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP SSO 인터랙티브 가이드</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chosen Palette: Calm Neutral (Slate/Blue) -->
+    <!-- Application Structure Plan: 관리자 섹션을 제거하고 일반 사용자 중심으로 재편했습니다. 원본 PDF의 4, 5, 6페이지 순서를 따라, [1. 퀵링크 접속] -> [2. 최초 설정] -> [3. 이후 사용법]의 명확한 선형적 절차를 제시합니다. 각 단계마다 좌측에 이미지 플레이스홀더, 우측에 설명을 배치하는 2단 그리드 레이아웃을 적용하여, 사용자가 시각 자료(이미지)와 텍스트(설명)를 1:1로 매칭하며 쉽게 따라올 수 있도록 사용자 경험(UX)을 설계했습니다. -->
+    <!-- Visualization & Content Choices: 
+        1. (정보: 사용자 역할 구분) -> (목표: 정보 분리) -> (표현: 제거됨) -> (근거: 단일 대상(일반 사용자)에 집중하기 위해 탭 제거)
+        2. (정보: 사용자 프로세스) -> (목표: 단계별 절차 안내) -> (표현: HTML/Tailwind를 사용한 2단 그리드 (이미지 + 텍스트)) -> (인터랙션: 없음) -> (근거: PDF의 스크린샷과 넘버링된 텍스트를 가장 효과적으로 결합하는 레이아웃) -> (라이브러리: HTML/Tailwind)
+        3. (정보: UI 스크린샷) -> (목표: 시각적 맥락 제공) -> (표현: <img> 플레이스홀더) -> (인터랙션: 없음) -> (근거: 사용자가 요청한 이미지 삽입을 위한 자리 확보) -> (라이브러리: HTML)
+        4. (정보: 데이터/차트) -> (목표: 없음) -> (표현: 없음) -> (근거: 원본 소스가 프로세스 매뉴얼이므로 시각화할 정량적 데이터가 없음.)
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        /* 추가적인 커스텀 스타일이 필요할 경우 여기에 작성 */
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans leading-relaxed">
+
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto max-w-5xl p-6 flex justify-between items-center">
+            <!-- SeAH 로고 이미지 플레이스홀더 -->
+            <img src="IMAGE_URL_SEAH_LOGO" alt="SeAH 로고" class="h-8 w-auto">
+            
+            <h1 class="text-2xl md:text-3xl font-bold text-slate-800">
+                SAP SSO 자동 로그인 가이드
+            </h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-5xl p-6 mt-4">
+        
+        <p class="text-lg text-slate-600 mb-4 text-center max-w-3xl mx-auto">
+            쉽고 빠르게, 세아웍스 포털을 통해 SAP 시스템에 로그인하세요. <br> 복잡한 비밀번호 입력 없이, 클릭 한 번으로 업무를 시작할 수 있습니다.
+        </p>
+        <p class="text-md text-slate-500 font-semibold mb-8 text-center max-w-3xl mx-auto">
+            - 디지털 전략팀 -
+        </p>
+
+        <!-- 가이드 섹션 -->
+        <section id="content-guide">
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-slate-200 space-y-12">
+                
+                <!-- 1. 세아웍스 퀵링크 (PDF p.4) -->
+                <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                    <!-- 좌측: 이미지 플레이스홀더 -->
+                    <div>
+                        <img src="IMAGE_URL_PAGE_4" alt="세아웍스 퀵링크 화면" class="rounded-lg shadow-md border border-slate-200 w-full" onerror="this.src='https://placehold.co/600x400/e2e8f0/cbd5e1?text=세아웍스+퀵링크';">
+                    </div>
+                    <!-- 우측: 텍스트 설명 -->
+                    <div class="mt-6 md:mt-0">
+                        <h3 class="text-xl font-bold text-slate-800 mb-5 border-l-4 border-blue-600 pl-3">
+                            1. 세아웍스 퀵링크
+                        </h3>
+                        <p class="text-slate-600">
+                            SeAH Works 포털에 접속 후, 바로가기 메뉴의 '퀵링크'를 선택합니다.
+                        </p>
+                        <ul class="list-disc list-inside text-slate-600 mt-4 space-y-2">
+                            <li>
+                                <strong>(이미지 1번)</strong> 퀵링크 메뉴 목록에서 <strong>'SAP 로그인'</strong> 항목을 클릭하여 접속합니다.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 구분선 -->
+                <hr class="border-slate-200">
+
+                <!-- 2. SAP 자동 로그인 최초 설정 (PDF p.5) -->
+                <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                    <!-- 좌측: 이미지 플레이스홀더 -->
+                    <div>
+                        <img src="IMAGE_URL_PAGE_5" alt="SAP 자동 로그인 최초 설정" class="rounded-lg shadow-md border border-slate-200 w-full" onerror="this.src='https://placehold.co/600x400/e2e8f0/cbd5e1?text=최초+설정+화면';">
+                    </div>
+                    <!-- 우측: 텍스트 설명 -->
+                    <div class="mt-6 md:mt-0">
+                        <h3 class="text-xl font-bold text-slate-800 mb-5 border-l-4 border-blue-600 pl-3">
+                            2. SAP 자동 로그인 최초 설정
+                        </h3>
+                        <p class="text-slate-600">
+                            처음 자동 로그인을 설정하는 PC에서 **딱 한 번**만 진행하는 단계입니다.
+                        </p>
+                        <ol class="list-decimal list-inside text-slate-600 mt-4 space-y-3">
+                            <li>
+                                <strong>(이미지 1번)</strong> 화면 중앙의 파란색 <strong>'SAP 프로그램... REG 파일 다운로드'</strong> 버튼을 클릭합니다.
+                            </li>
+                            <li>
+                                <strong>(이미지 2번)</strong> 다운로드된 <strong>`SapShcutLoginReg.bat`</strong> 파일을 클릭하여 실행합니다.
+                            </li>
+                            <li>
+                                <strong>(이미지 3번)</strong> Windows 보안 경고창에서 <strong>'실행'</strong> 버튼을 클릭합니다.
+                            </li>
+                            <li>
+                                <strong>(실행 확인)</strong> 검은색 명령(cmd) 창이 자동으로 사라지면 설정이 완료됩니다.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- 구분선 -->
+                <hr class="border-slate-200">
+
+                <!-- 3. SAP 자동 로그인 프로세스 (PDF p.6) -->
+                <div class="md:grid md:grid-cols-2 md:gap-8 items-center">
+                    <!-- 좌측: 이미지 플레이스홀더 -->
+                    <div>
+                        <img src="IMAGE_URL_PAGE_6" alt="SAP 자동 로그인 프로세스" class="rounded-lg shadow-md border border-slate-200 w-full" onerror="this.src='https://placehold.co/600x400/e2e8f0/cbd5e1?text=로그인+프로세스+화면';">
+                    </div>
+                    <!-- 우측: 텍스트 설명 -->
+                    <div class="mt-6 md:mt-0">
+                        <h3 class="text-xl font-bold text-slate-800 mb-5 border-l-4 border-blue-600 pl-3">
+                            3. SAP 자동 로그인 프로세스 (설정 이후)
+                        </h3>
+                        <p class="text-slate-600">
+                            최초 설정을 마쳤다면, 앞으로 SAP에 접속할 때는 이 방법만 사용하시면 됩니다.
+                        </p>
+                        <ol class="list-decimal list-inside text-slate-600 mt-4 space-y-3">
+                            <li>
+                                <strong>(이미지 1번)</strong> <strong>'항상 ... 열기'</strong> 체크박스를 선택하면 다음 접속부터 편리합니다.
+                            </li>
+                            <li>
+                                <strong>(이미지 2번)</strong> <strong>'Windows 명령 처리기 열기'</strong> 버튼을 클릭합니다.
+                            </li>
+                            <li>
+                                <strong>(이미지 3번)</strong> 검은색 명령(cmd) 창이 나타났다가 자동으로 사라집니다.
+                            </li>
+                            <li>
+                                <strong>(이미지 4번)</strong> SAP 시스템에 자동으로 로그인됩니다.
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="text-center p-8 mt-10 border-t border-slate-200">
+        <p class="text-sm text-slate-500">Copyright 2025. SeAH Besteel Holdings All rights reserved.</p>
+    </footer>
+
+    <!-- 탭 기능이 제거되어 스크립트가 필요 없습니다. -->
+
+</body>
+</html>
+
+
+
+
